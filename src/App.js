@@ -40,6 +40,13 @@ const App = () => {
   * Check if we're authorized to access the user's wallet
   */
       const accounts = await ethereum.request({ method: 'eth_accounts' });
+      const chainId = await ethereum.request({ method: 'eth_chainId' });
+
+      // String, hex code of the chainId of the Rinkebey test network
+      const rinkebyChainId = "0x4";
+      if (chainId !== rinkebyChainId) {
+        alert("You are not connected to the Rinkeby Test Network!");
+      }
 
       if (accounts.length > 0) {
         const [account] = accounts;
