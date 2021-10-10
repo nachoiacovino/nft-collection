@@ -148,7 +148,7 @@ const App = () => {
   const renderNotConnectedContainer =
     currentAccount ? (
       <button onClick={askContractToMintNft} className="cta-button mint-button" disabled={loading}>
-        {loading && <div class="loading-icon">
+        {loading && <div className="loading-icon">
           <Loading />
         </div>}
         Mint{loading && "ing"} NFT
