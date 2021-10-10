@@ -7,9 +7,9 @@ import twitterLogo from './assets/twitter-logo.svg';
 import myEpicNft from './utils/MyEpicNFT.json';
 
 // Constants
-const TWITTER_HANDLE = '_buildspace';
+const TWITTER_HANDLE = 'nachoiacovino';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
-const OPENSEA_LINK = '';
+const OPENSEA_LINK = 'https://testnets.opensea.io/collection/squarenft-ou34exlqtf';
 const TOTAL_MINT_COUNT = 50;
 
 const CONTRACT_ADDRESS = "0x16e7c27AddEC9a40091D59a5e7a48B3e953fF596";
@@ -160,6 +160,16 @@ const App = () => {
             Each unique. Each beautiful. Discover your NFT today.
           </p>
           {renderNotConnectedContainer}
+          <div className="footer-container">
+            <a
+              className="footer-text"
+              href={OPENSEA_LINK}
+              target="_blank"
+              rel="noreferrer"
+            >
+              🌊 View Collection on OpenSea
+            </a>
+          </div>
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
@@ -168,7 +178,7 @@ const App = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >built by @{TWITTER_HANDLE}</a>
         </div>
       </div>
     </div>
