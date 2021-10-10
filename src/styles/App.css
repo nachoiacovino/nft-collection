@@ -58,7 +58,19 @@
   background: -webkit-linear-gradient(left, #a200d6, #ff6fdf);
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
-  margin-right: 15px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.mint-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.loading-icon {
+  margin-right: 10px;
 }
 
 .opensea-button {

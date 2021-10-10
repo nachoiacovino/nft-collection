@@ -3,6 +3,7 @@ import './styles/App.css';
 import { ethers } from 'ethers';
 import React, { useEffect, useState } from 'react';
 
+import { ReactComponent as Loading } from './assets/loading.svg';
 import twitterLogo from './assets/twitter-logo.svg';
 import myEpicNft from './utils/MyEpicNFT.json';
 
@@ -16,6 +17,7 @@ const CONTRACT_ADDRESS = "0x16e7c27AddEC9a40091D59a5e7a48B3e953fF596";
 
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
+  const [loading, setLoading] = useState(false);
 
   /*
   * This runs our function when the page loads.
@@ -116,6 +118,7 @@ const App = () => {
 
   const askContractToMintNft = async () => {
     try {
+      setLoading(true);
       const { ethereum } = window;
 
       if (ethereum) {
@@ -136,14 +139,19 @@ const App = () => {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
   // Render Methods
   const renderNotConnectedContainer =
     currentAccount ? (
-      <button onClick={askContractToMintNft} className="cta-button connect-wallet-button">
-        Mint NFT
+      <button onClick={askContractToMintNft} className="cta-button mint-button" disabled={loading}>
+        {loading && <div class="loading-icon">
+          <Loading />
+        </div>}
+        Mint{loading && "ing"} NFT
       </button>
     ) : (
       <button onClick={connectWallet} className="cta-button connect-wallet-button">
