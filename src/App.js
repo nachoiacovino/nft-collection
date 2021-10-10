@@ -11,7 +11,7 @@ import myEpicNft from './utils/MyEpicNFT.json';
 const TWITTER_HANDLE = 'nachoiacovino';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const OPENSEA_LINK = 'https://testnets.opensea.io/collection/squarenft-ou34exlqtf';
-const TOTAL_MINT_COUNT = 50;
+/* const TOTAL_MINT_COUNT = 50; */
 
 const CONTRACT_ADDRESS = "0x16e7c27AddEC9a40091D59a5e7a48B3e953fF596";
 
